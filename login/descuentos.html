@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+    <h1>Cálculo descuento residente</h1>
+    <label for="">Adultos</label>
+    <input type="number" id="adultos"> <br>
+    <label for="">Niños</label>
+    <input type="number" id="ninis"> <br>
+    <label for="">Maletas</label>
+    <input type="number" id="maletas"> <br>
+    <label for="">¿Es residente?</label> <br>
+    <input type="radio" name="residente"  id="residenteSi">
+    <label for="">Sí</label>
+    <input type="radio" name="residente" id="residenteNo" checked>
+    <label for="">No</label><br>
+    <button onclick="calcularPrecio()">
+        Calcular precio
+    </button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPrecio(){
+
+            const radioSI = document.getElementById("residenteSi");
+            const radioNO = document.getElementById("residenteNo");
+            const Adultos = parseFloat(document.getElementById("adultos").value);
+            const Niños = parseFloat(document.getElementById("ninis").value);
+            const Maletas = parseFloat(document.getElementById("maletas").value);
+
+            var precio = Adultos * 100 + Niños * 75;
+            var MALETAS = Maletas * 50;
+            
+            if (radioSI.checked){
+                precioFinal = (precio * 0.25) + MALETAS;
+                
+            }
+            else{
+                precioFinal = precio + MALETAS;
+            }
+            alert("El precio es " + precioFinal + "€")
+            
+        }
+    </script>
+</body>
+</html>

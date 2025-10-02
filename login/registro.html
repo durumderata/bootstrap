@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h2>Registro</h2>
+    <input type="text" id="regUser" placeholder="Usuario"> <br/>
+    <input type="text" id="regPass" placeholder="Contraseña"> <br/>
+    <button onclick="register">Registrar</button>
+    <script>
+        function register() {
+            const user = document.getElementById("regUser").value;
+            const pass = document.getElementById("regPass").value;
+
+        // Comprobar campos vacíos
+        if (user == "" || pass == "") {
+            alert("Rellena todos los campos")
+        }
+        // Recuperar usuarios guardados
+        let users = localStorage.getItem("users");
+        users = users ? JSON.parse(users): {};
+
+        // Comprobar si existe usuario
+        if(users[users]){
+            alert("el usuario ya existe");
+            return;
+        }
+
+        //Guardar usuario
+        users[user] = pass;
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("se ha creado un nuevo usuariom puedes iniciar sesion");
+        }
+    </script>
+</body>
+</html>

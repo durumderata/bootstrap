@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #dddddd;
+}
+
+header{
+    background-color: rgb(54, 151, 151);
+    color: white;
+    padding:1em;
+    text-align: center;
+}
+nav a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+main{
+    padding: 20px;
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(54, 151, 151);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#titolprincipal{
+    font-size: 30px;
+}
+
+/* . = classe */
+.enllaçblau{
+    color: blue;
+}
